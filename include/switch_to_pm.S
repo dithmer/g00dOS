@@ -1,5 +1,8 @@
 [bits 16]
 switch_to_pm:
+    xor ax, ax
+    mov ds, ax
+
     cli
     lgdt [gdt_descriptor]
 
