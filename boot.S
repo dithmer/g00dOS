@@ -1,3 +1,4 @@
+[bits 16]
 [org 0x7c00]
 xor ax, ax
 mov ds, ax
