@@ -6,7 +6,7 @@ print_pm:
     pusha
     mov edx, VIDEO_MEMORY
 
-.loop
+.loop:
     mov al, [ebx]
     cmp al, 0
     je .end
