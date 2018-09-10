@@ -1,3 +1,4 @@
+[bits 16]
 ; My GDT will have a very simple layout. Two overlapping segments for 32-Bit
 ; code and data segment in Ring0 (Highest Privileges).
 gdt:
@@ -11,7 +12,7 @@ gdt_code:
     dw 0x0
     db 0x0
     db 10011010b
-    db 11001111b
+    db 11101111b
     db 0x0
 
 ; Data-Segment Description
@@ -20,7 +21,7 @@ gdt_data:
     dw 0x0
     db 0x0
     db 10010010b
-    db 11001111b
+    db 11101111b
     db 0x0
 
 gdt_end:

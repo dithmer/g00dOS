@@ -4,6 +4,9 @@ xor ax, ax
 mov ds, ax
 mov es, ax
 
+mov ah, 0x0
+int 10h
+
 mov si, RM_INTRO_MESSAGE
 call print_rm
 
@@ -20,11 +23,11 @@ jmp $
 BEGIN_PM:
     mov ebx, PM_INTRO_MESSAGE
     call print_pm
+    cli
+    hlt
 
-    jmp $
-
-RM_INTRO_MESSAGE db 'Starting bootloader in realmode...', 0x0
+RM_INTRO_MESSAGE db 0x0a, 0x0d, 'Bootloader in realmode...', 0x0
 PM_INTRO_MESSAGE db 'Changed mode to protected mode...', 0x0
 
-times 510 - ($ -$$) db 0
+times 510 - ($ - $$) db 0
 dw 0xaa55
