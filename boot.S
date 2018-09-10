@@ -10,6 +10,8 @@ call print_rm
 jmp $
 
 %include "./include/print_rm.S"
+%include "./include/gdt.S"
+%include "./include/print_pm.S"
 
 RM_INTRO_MESSAGE db 'Starting bootloader in realmode...', 0x0
 
