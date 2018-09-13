@@ -1,10 +1,7 @@
 [bits 16]
 read_disk:
-    pusha
-    
     xor ax, ax
     mov es, ax
-    mov ds, ax
 
     mov ah, 0x02
     mov al, dh
@@ -17,7 +14,6 @@ read_disk:
     jc disk_error
 
 .end:
-    popa
     ret
 
 disk_error:
